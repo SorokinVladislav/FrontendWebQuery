@@ -9,6 +9,7 @@
 
 .dialogsitems {
     padding: 10px;
+    color: white;
 }
 .dialogsitems .active{
     color: gold;
@@ -19,6 +20,10 @@
 
 }
 
-.message {
+.messages{
+color: white;
+}
 
+.avatarka{
+    height: 20px;
 }

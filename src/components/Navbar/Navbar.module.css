@@ -13,3 +13,16 @@
     .item a.active{
         color: gold;
     }
+
+    .friends{
+        margin-top: 40px;
+        font-size: 35px;
+        color: white;
+    }
+
+.friendsContent {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    grid-area: c;
+
+}
