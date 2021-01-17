@@ -2,6 +2,7 @@ import profileReducer from "./profile_reducer";
 import dialogsReducer from "./dialogs_reducer";
 import {sidebarReducer} from "./sidebar_reducer";
 
+
 let store = {
     _state: {
         profilePage: {
@@ -35,7 +36,7 @@ let store = {
                 {id: 4, name: 'Sasha', ava: 'https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg'},
                 {id: 5, name: 'Dimych', ava: 'https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg'},
             ],
-            newPostText: "itmadafasf"
+            newPostText: "itmadafa sf"
 
         },
         dialogsPage: {
