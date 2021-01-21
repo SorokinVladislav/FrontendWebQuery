@@ -11,6 +11,7 @@ let mapStateToProps = (state) => {
 }
 
 let mapDispatchToProps = (dispatch) => {
+
     return {
         follow: (userId) => {
             dispatch(followAC(userId));
@@ -22,5 +23,5 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-let UsersContainer = connect(mapStateToProps, mapDispatchToProps(Users));
+let UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users);
 export default UsersContainer;
