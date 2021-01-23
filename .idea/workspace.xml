@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3106e39a-1dab-446a-9b39-980cb84b0002" name="Default Changelist" comment="20.01">
-      <change afterPath="$PROJECT_DIR$/src/assets/images/Youtube_loading_symbol_1_(wobbly).gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/preloader/Preloader.js" afterDir="false" />
+    <list default="true" id="3106e39a-1dab-446a-9b39-980cb84b0002" name="Default Changelist" comment="23.01">
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/users.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/users.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile_reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/users_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +54,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Users" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,11 +68,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vla_o\React-Project\src\components\Profile" />
       <recent name="C:\Users\vla_o\React-Project\src\components\Users" />
       <recent name="C:\Users\vla_o\React-Project\src\components\Dialogs" />
       <recent name="C:\Users\vla_o\React-Project\src\components\Profile\MyPosts" />
       <recent name="C:\Users\vla_o\React-Project\src" />
-      <recent name="C:\Users\vla_o\React-Project\src\components\Navbar\Friends" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\vla_o\React-Project\src\assets\images" />
@@ -89,6 +92,14 @@
       <workItem from="1611068380936" duration="9709000" />
       <workItem from="1611125705709" duration="10079000" />
     </task>
+    <task id="LOCAL-00001" summary="23.01">
+      <created>1611412254922</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611412254922</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,5 +125,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="23.01" />
+    <option name="LAST_COMMIT_MESSAGE" value="23.01" />
   </component>
 </project>
