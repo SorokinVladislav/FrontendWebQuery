@@ -3,7 +3,7 @@ import styles from './users.module.css'
 import axios from "axios";
 import userPhoto from '../../assets/images/m1000x1000.jpg'
 
-class Users extends React.Component{
+class Users extends React.Component {
 
 
     componentDidMount() {
@@ -11,18 +11,35 @@ class Users extends React.Component{
             this.props.setUsers(response.data.items));
     }
 
-    render (){
+    render() {
+
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
+        let pages = [];
+        for (let i = 1; i <= pagesCount; i++) {
+            pages.push(i);
+        }
         return <div>
-            <button onClick={this.getUsers}>Get users</button>
+            <div>
+                {pages.map(p => {
+                   return  <span className={this.props.currentPage === p && styles.selectedPage}>{p}</span>
+                })}
+
+            </div>
+
+
             {
                 this.props.users.map(u => <div key={u.id}>
             <span>
                 <div>
-                    <img src={u.photos.small !=null ? u.photos.small : userPhoto} className={styles.userPhoto} alt=""/>
+                    <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.userPhoto} alt=""/>
                 </div>
                 <div>
-                    {u.followed ?   <button onClick={() => {this.props.unfollow(u.id)}}>UnFollow</button>
-                        :  <button onClick={() => {this.props.follow(u.id)}}>Follow</button>}
+                    {u.followed ? <button onClick={() => {
+                            this.props.unfollow(u.id)
+                        }}>UnFollow</button>
+                        : <button onClick={() => {
+                            this.props.follow(u.id)
+                        }}>Follow</button>}
                 </div>
             </span>
                     <span>
