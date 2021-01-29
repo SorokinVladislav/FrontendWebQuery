@@ -1,6 +1,9 @@
+import {profileAPI, usersAPI} from "../api/api";
+
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_STATUS = 'SET_STATUS';
 
 
 let initialState = {
@@ -35,7 +38,8 @@ let initialState = {
         {id: 5, name: 'Dimych', ava: 'https://whatsism.com/uploads/posts/2018-07/1530546770_rmk_vdjbx10.jpg'},
     ],
     newPostText: "itmadafa sf",
-    profile: null
+    profile: null,
+    status: ""
 }
 
 export const profileReducer = (state = initialState, action) => {
@@ -55,6 +59,9 @@ export const profileReducer = (state = initialState, action) => {
         }
         case UPDATE_NEW_POST_TEXT:
             return {...state, newPostText: action.newText};
+                   case SET_STATUS:
+            return {...state, status: action.status};
+
         case SET_USER_PROFILE:
             return {...state, profile:action.profile}
 
@@ -66,6 +73,31 @@ export const profileReducer = (state = initialState, action) => {
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
+export const setStatus = (status) => ({type: SET_STATUS, status});
+
+export const getStatus = (status) => (dispatch) => {
+    profileAPI.getStatus(status).
+    then(response => {
+        dispatch(setStatus(response.data));
+    })
+};
+export const updateStatus = (status) => (dispatch) => {
+    profileAPI.updateStatus(status).
+    then(response => {
+
+        if(response.data.resultCode === 200)
+        dispatch(setStatus(response.data));
+    })
+};
+
+
+
+export const getUserProfile = (userId) => (dispatch) => {
+    usersAPI.getProfile(userId).then(response => {
+        dispatch(setUserProfile(response.data));
+    })
+};
+
 export const updateNewPostTextActionCreator = (text) => ({
     type: UPDATE_NEW_POST_TEXT, newText: text
 });
