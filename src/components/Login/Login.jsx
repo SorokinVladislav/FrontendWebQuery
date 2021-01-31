@@ -16,7 +16,8 @@ const LoginForm = (props) => {
                        component={Input}/>
             </div>
             <div>
-                <Field type={"password"} validate={[required]} placeholder="Password" name={"password"} component={Input}/>
+                <Field type={"password"} validate={[required]} placeholder="Password" name={"password"}
+                       component={Input}/>
             </div>
             <div>
                 <Field type={"checkbox"} component={Input} name={"rememberMe"}/> remember me
@@ -35,9 +36,9 @@ const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.login(formData.email, formData.password,  formData.rememberMe);
+        props.login(formData.email, formData.password, formData.rememberMe);
     }
-    if (props.isAuth){
+    if (props.isAuth) {
         return <Redirect to={"/profile"}/>
     }
     return <div>
@@ -46,7 +47,7 @@ const Login = (props) => {
     </div>
 }
 
-const mapStateToProps = (state) =>({
+const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth
 })
 

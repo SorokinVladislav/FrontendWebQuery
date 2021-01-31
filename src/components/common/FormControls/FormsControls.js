@@ -6,7 +6,7 @@ export const FormControl = ({input, meta, child, ...props}) => {
 
     const hasError = meta.error && meta.touched;
     return (
-        <div className={styles.formControl + " " + (hasError? styles.error : "")}>
+        <div className={styles.formControl + " " + (hasError ? styles.error : "")}>
             <div>
                 {props.children}
             </div>
@@ -18,11 +18,11 @@ export const FormControl = ({input, meta, child, ...props}) => {
 
 export const Textarea = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return ( <FormControl {...props}><textarea{...input}{...restProps} placeholder="Enter message..."/></FormControl>)
+    return (<FormControl {...props}><textarea{...input}{...restProps} placeholder="Enter message..."/></FormControl>)
 }
 
 export const Input = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return ( <FormControl {...props}><input {...input}{...restProps} /></FormControl>)
+    return (<FormControl {...props}><input {...input}{...restProps} /></FormControl>)
 
 }

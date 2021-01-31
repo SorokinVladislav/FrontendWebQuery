@@ -5,26 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3106e39a-1dab-446a-9b39-980cb84b0002" name="Default Changelist" comment="29.01">
-      <change afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormsControls.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormsControls.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validators/validators.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/app_reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/users_selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Dialogs/DialogsContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/HeaderContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPosts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/MyPosts/MyPostsContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormsControls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormControls/FormsControls.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormsControls.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/auth_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs_reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux_store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux_store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/FormControls" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/redux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -76,9 +75,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vla_o\React-Project\src\redux" />
       <recent name="C:\Users\vla_o\React-Project\src\components\common\FormControls" />
       <recent name="C:\Users\vla_o\React-Project\src\components\Header" />
-      <recent name="C:\Users\vla_o\React-Project\src\redux" />
       <recent name="C:\Users\vla_o\React-Project\src\components\Profile" />
       <recent name="C:\Users\vla_o\React-Project\src\components\Users" />
     </key>
@@ -106,6 +105,7 @@
       <workItem from="1611729619618" duration="20862000" />
       <workItem from="1611836732902" duration="5759000" />
       <workItem from="1611914817094" duration="7440000" />
+      <workItem from="1612081780327" duration="8692000" />
     </task>
     <task id="LOCAL-00001" summary="23.01">
       <created>1611412254922</created>
