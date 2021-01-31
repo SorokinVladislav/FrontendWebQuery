@@ -106,7 +106,9 @@ export const follow = (userId) => {
                     dispatch(followSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId));
-            })}}
+            })
+    }
+}
 
 export const unfollow = (userId) => {
     return (dispatch) => {
@@ -117,6 +119,8 @@ export const unfollow = (userId) => {
                     dispatch(unfollowSuccess(userId));
                 }
                 dispatch(toggleFollowingProgress(false, userId));
-            })}}
+            })
+    }
+}
 
 export default usersReducer;
