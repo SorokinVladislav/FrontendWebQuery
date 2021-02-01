@@ -1,4 +1,3 @@
-import {act} from "@testing-library/react";
 import {usersAPI} from "../api/api";
 import {updateObjectInArray} from "../utils/object-helpers";
 
@@ -23,14 +22,12 @@ let initialState = {
 export const usersReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
-            return {
-                ...state,
+            return {...state,
                 users: updateObjectInArray(state.users, action.userId, "id", {followed: true})
             }
         case UNFOLLOW:
-            return {
-                ...state,
-                users: updateObjectInArray(state.users, action.userId, "id", {followed: true})
+            return {...state,
+                users: updateObjectInArray(state.users, action.userId, "id", {followed: false})
             }
         case SET_USERS: {
             return {...state, users: action.users}
@@ -51,7 +48,7 @@ export const usersReducer = (state = initialState, action) => {
                 ...state,
                 followingInProgress: action.isFetching
                     ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id => id != action.userId)
+                    : state.followingInProgress.filter(id => id !== action.userId)
             }
         }
 
@@ -94,19 +91,15 @@ const followUnfollowFlow = async (dispatch, userId, apiMethod, actionCreator ) =
     dispatch(toggleFollowingProgress(false, userId));
 }
 
-
-
-
-
 export const follow = (userId) => {
     return async (dispatch) => {
-        followUnfollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), followSuccess);
+        await followUnfollowFlow(dispatch, userId, usersAPI.follow.bind(usersAPI), followSuccess);
     }
 }
 
 export const unfollow = (userId) => {
     return async (dispatch) => {
-        followUnfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), unfollowSuccess);
+        await followUnfollowFlow(dispatch, userId, usersAPI.unfollow.bind(usersAPI), unfollowSuccess);
     }
 }
 

@@ -60,7 +60,7 @@ export const profileReducer = (state = initialState, action) => {
 
             return {
                 ...state,
-                posts: state.posts.filter(p => p.id != action.postId)
+                posts: state.posts.filter(p => p.id !== action.postId)
             }
         }
 
