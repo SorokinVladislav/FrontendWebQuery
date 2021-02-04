@@ -6,18 +6,21 @@ const GET_CAPTCHA_URL = 'VladkaProject/auth/GET_CAPTCHA_URL';
 
 
 let initialState = {
-    usersId: null,
-    email: null,
-    login: null,
+    usersId: null as number | null,
+    email: null as number | null,
+    login: null as number | null,
     isAuth: false,
-    captchaURL: null,
-}
+    captchaURL: null as number | null
+};
 
-const authReducer = (state = initialState, action) => {
+export type InitialStateType = typeof initialState;
+
+const authReducer = (state = initialState, action: any): InitialStateType => {
     switch (action.type) {
         case GET_CAPTCHA_URL:
         case SET_USER_DATA:
             return {
+                userId: "fwf",
                 ...state,
                 ...action.payload,
             }
@@ -29,15 +32,32 @@ const authReducer = (state = initialState, action) => {
 
 }
 
-export const setAuthUserData = (userId, email, login, isAuth) =>
+type SetAuthUserDataActionPayloadType = {
+    userId: number | null
+    email: string | null
+    login: string | null
+    isAuth: boolean
+}
+
+type SetAuthUserDataType = {
+    type: typeof SET_USER_DATA,
+    payload: SetAuthUserDataActionPayloadType
+}
+
+export const setAuthUserData = (userId: number | null, email: string | null, login: string | null, isAuth: boolean): SetAuthUserDataType =>
     ({type: SET_USER_DATA, payload: {userId, email, login, isAuth}});
 
 
-export const getCaptchaURL = (captchaURL) =>
+type GetCaptchaURLSuccessType = {
+    type: typeof GET_CAPTCHA_URL,
+    payload: { captchaURL: string }
+}
+
+export const getCaptchaURLSuccess = (captchaURL: string):GetCaptchaURLSuccessType =>
     ({type: GET_CAPTCHA_URL, payload: {captchaURL}});
 
 
-export const getAuthUserData = () => async (dispatch) => {
+export const getAuthUserData = () => async (dispatch: any) => {
     let response = await authApi.me();
     if (response.data.resultCode === 0) {
         let {id, login, email} = response.data.data;
@@ -45,15 +65,15 @@ export const getAuthUserData = () => async (dispatch) => {
     }
 }
 
-export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
+export const login = (email: string, password: string, rememberMe: boolean, captcha: string) => async (dispatch: any) => {
 
     let response = await authApi.login(email, password, rememberMe, captcha);
 
     if (response.data.resultCode === 0) {
         dispatch(getAuthUserData());
-    }  else {
+    } else {
         if (response.data.resultCode === 10) {
-dispatch(getCaptchaThunk());
+            dispatch(getCaptchaThunk());
         }
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
         dispatch(stopSubmit("login", {_error: message}))
@@ -61,15 +81,15 @@ dispatch(getCaptchaThunk());
 
 }
 
-export const getCaptchaThunk = () => async (dispatch) => {
+export const getCaptchaThunk = () => async (dispatch: any) => {
     let response = await securityAPI.getCaptcha();
     let captchaURL = response.data.url;
-    dispatch(getCaptchaURL(captchaURL));
+    dispatch(getCaptchaURLSuccess(captchaURL));
 
 
 }
 
-export const logout = () => async (dispatch) => {
+export const logout = () => async (dispatch: any) => {
     let response = await authApi.logout();
     if (response.data.resultCode === 0) {
         dispatch(setAuthUserData(null, null, null, false));

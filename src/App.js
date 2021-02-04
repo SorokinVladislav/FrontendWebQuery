@@ -17,9 +17,19 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 
 class App extends React.Component {
+    catchAllUnhandledError = (reason, promise) => {
+alert("Some error");
+    }
+
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledError);
     }
+
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledError);
+    }
+
 
     render() {
         if (!this.props.initialized) {
@@ -29,6 +39,10 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Navbar/>
                 <div className='app-wrapper-content'>
+
+                    <Route exact path="/"
+                           render={withSuspense(ProfileContainer)}/>
+
                     <Route path="/dialogs"
                            render={withSuspense(DialogsContainer)}/>
                     <Route path="/profile/:userId?"
@@ -38,6 +52,7 @@ class App extends React.Component {
                            render={() => <UsersContainer/>}/>
                     <Route path="/login"
                            render={() => <Login/>}/>
+
                 </div>
 
             </div>
@@ -57,7 +72,7 @@ let AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 let SamuraiJSApp = (props) =>{
- return   <BrowserRouter basename={process.env.PUBLIC_URL}>
+ return   <BrowserRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
