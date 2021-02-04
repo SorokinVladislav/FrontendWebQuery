@@ -19,7 +19,7 @@ export const FormControl = ({input, meta: {touched, error, children}, ...props})
 
 export const Textarea = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return (<FormControl {...props}><textarea{...input}{...restProps} placeholder="Enter message..."/></FormControl>)
+    return (<FormControl {...props}><textarea{...input}{...restProps} placeholder={props.placeholder}/></FormControl>)
 }
 
 
