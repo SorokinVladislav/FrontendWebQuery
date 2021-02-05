@@ -5,15 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3106e39a-1dab-446a-9b39-980cb84b0002" name="Default Changelist" comment="04.02">
+      <change afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/app_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app_reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth_reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/dialogs_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/dialogs_reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/profile_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profile_reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profile_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebar_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebar_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +113,7 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Paginator.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/common/Paginator/Paginator.jsx" working-dir="$PROJECT_DIR$/src/components/common/Paginator">
+    <configuration name="Paginator.tsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" working-dir="$PROJECT_DIR$/src/components/common/Paginator">
       <method v="2" />
     </configuration>
     <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -140,7 +140,7 @@
       <list>
         <item itemvalue="npm.start" />
         <item itemvalue="npm.deploy" />
-        <item itemvalue="Node.js.Paginator.jsx" />
+        <item itemvalue="Node.js.Paginator.tsx" />
         <item itemvalue="Jest.ProfileStatus component.Call back sjould be called" />
         <item itemvalue="Jest.ProfileStatus component.Input shoul be displayed in editMode instead of span" />
       </list>
@@ -171,6 +171,7 @@
       <workItem from="1612289727598" duration="2850000" />
       <workItem from="1612419641334" duration="21838000" />
       <workItem from="1612463597732" duration="5055000" />
+      <workItem from="1612508785042" duration="3779000" />
     </task>
     <task id="LOCAL-00001" summary="23.01">
       <created>1611412254922</created>
