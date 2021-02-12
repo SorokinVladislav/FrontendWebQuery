@@ -49,7 +49,7 @@ alert("Some error");
                            render={withSuspense(ProfileContainer)}/>
 
                     <Route path="/users"
-                           render={() => <UsersContainer/>}/>
+                           render={() => <UsersContainer pageTitle={"Соц сеть"}/>}/>
                     <Route path="/login"
                            render={() => <Login/>}/>
 

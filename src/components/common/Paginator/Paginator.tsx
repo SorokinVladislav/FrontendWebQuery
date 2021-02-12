@@ -19,16 +19,13 @@ let Paginator: React.FC<PropsType> = ({currentPage, onPageChanged, totalItemsCou
     }
 
     let portionCount = Math.ceil(pagesCount / portionSize);
-
     let [portionNumber, setPortionNumber] = useState(1);
-
     let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1;
     let rightPortionPageNumber = portionNumber * portionSize;
 
     return <div className={styles.paginator}>
         {portionNumber > 1 &&
         <button onClick={() => {setPortionNumber(portionNumber - 1)}}>Previous</button>}
-
         {pages
             .filter(p => p >= leftPortionPageNumber && p <= rightPortionPageNumber)
             .map((p) => {
@@ -46,4 +43,4 @@ let Paginator: React.FC<PropsType> = ({currentPage, onPageChanged, totalItemsCou
     </div>
 }
 
-export default Paginator;
+export default Paginator
