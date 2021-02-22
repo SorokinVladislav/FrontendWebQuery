@@ -8,7 +8,7 @@ import {Redirect} from "react-router-dom";
 import style from '../common/FormControls/FormsControls.module.css'
 
 const LoginForm = ({handleSubmit, error, captchaURL}) => {
-    debugger
+
     return (
         <form onSubmit={handleSubmit}>
             {createField("Email", "email", [required], Input)}

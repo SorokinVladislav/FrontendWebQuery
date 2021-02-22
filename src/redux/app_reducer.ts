@@ -9,7 +9,7 @@ export type InitialStateType = {
 }
 
 let initialState: InitialStateType = {
-    initialized: false,
+    initialized: true,
 
 }
 

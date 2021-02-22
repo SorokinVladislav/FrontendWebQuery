@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
-import SamuraiJSApp from "./App";
+import WebQuery from "./App";
 
 
-    ReactDOM.render(<SamuraiJSApp />, document.getElementById('root')
+    ReactDOM.render(<WebQuery />, document.getElementById('root')
     )
 
 

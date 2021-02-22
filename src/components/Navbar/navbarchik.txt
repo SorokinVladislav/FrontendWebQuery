@@ -1,0 +1,41 @@
+
+
+
+/*    <Container>
+
+        <Navbar className="nav-item">
+            <div className="col-sm">
+                <img width="100%" align="center"
+                     className="mainImage mainContainers"
+                     src="https://sun9-39.userapi.com/impg/zrwxEd3CkM2MyycRLnx5KLMFpluNOqlZSSdPnA/lc4Re0xnQP8.jpg?size=301x173&quality=96&proxy=1&sign=1188d0b87fed7d931018d06e4c9d3844&type=album">
+                </img>
+            </div>
+        </Navbar>
+
+        <Navbar bg="dark">
+            <NavLink to={"/users/"}> <span className="btn btn-secondary btn-block mainContainers">Все работы</span>
+            </NavLink>
+        </Navbar>
+
+        <Navbar bg="dark">
+            <NavLink to={"/closed/"}> <span
+                className="btn btn-secondary btn-block mainContainers">Закрытые работы</span> </NavLink>
+        </Navbar>
+
+        <Navbar bg="dark">
+            <NavLink to={"/suspend/"}> <span
+                className="btn btn-secondary btn-block mainContainers">Остановленные работы</span> </NavLink>
+        </Navbar>
+
+        <Navbar bg="dark">
+            <NavLink to={"/suspend/"}> <span
+                className="btn btn-secondary btn-block mainContainers">Работы с ошибками</span> </NavLink>
+        </Navbar>
+
+        <Navbar bg="dark">
+            <NavLink to={"/suspend/"}> <span
+                className="btn btn-secondary btn-block mainContainers">Администрирование</span> </NavLink>
+        </Navbar>
+
+
+    </Container>*/

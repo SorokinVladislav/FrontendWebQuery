@@ -34,3 +34,18 @@ export type UserType = {
     status: string
     photos: PhotosType
 }
+
+
+export type JobType = {
+    jid: number,
+    jobname: string,
+    quantity: string,
+    lastupdateddate: string,
+    product_name: string,
+    gtin: string,
+    jobstatus: string,
+    datatransferstage: string,
+    line_name: string,
+    batchno: string
+
+}

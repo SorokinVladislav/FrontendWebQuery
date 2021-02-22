@@ -11,6 +11,48 @@ const instance = axios.create({
     }
 });
 
+const jobInstance = axios.create({
+
+
+    baseURL: "http://localhost:8080/",
+    // headers: {
+    //     'Access-Control-Allow-Origin' : '*',
+    //     'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+    // },
+});
+
+export const jobsAPI = {
+    getAllJobs(typeOfJobs) {
+        switch (typeOfJobs) {
+            case "allJobs": {
+                return jobInstance.get("jobs").then(response => {
+                    return response.data;
+                })
+            }
+            case "closedJobs": {
+                return jobInstance.get("closed").then(response => {
+                    return response.data;
+                })
+            }
+            case "suspendJobs": {
+                return jobInstance.get("suspend").then(response => {
+                    return response.data;
+                })
+            }
+            case "mistakes": {
+                             debugger
+
+                return jobInstance.get("mistakes").then(response => {
+
+                    return response.data;
+                })
+            }
+
+
+
+        }
+    }
+}
 
 export const usersAPI = {
     getUsers(currentPage, pageSize) {
@@ -19,6 +61,8 @@ export const usersAPI = {
                 return response.data;
             });
     },
+
+
     follow(userId) {
         return instance.post(`follow/${userId}`)
 
@@ -51,7 +95,8 @@ export const profileAPI = {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
-        });},
+        });
+    },
 
     saveProfile(profile) {
         return instance.put(`profile`, profile);

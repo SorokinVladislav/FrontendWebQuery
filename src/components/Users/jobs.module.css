@@ -16,6 +16,31 @@ margin: 10px;
 border-color: black;
 }
 
+.mainContainers{
+    box-shadow: 0 0 20px #161616; /* Параметры тени */
+    background-color: #444b52;
+    border-radius: 7px;
+    margin-right: 20px;
+   /*border: 2px solid black*/
+}
+
+.mainContainers div{
+    align-self: center;
+    text-align: center;
+}
+
+.mainContainers b{
+    color: #ffc107;
+
+}
+
+.mainContainers span{
+    color: #fff;
+}
+
+
+
+
 .pageNumber{
     padding: 2px;
     border: 1px solid grey;
