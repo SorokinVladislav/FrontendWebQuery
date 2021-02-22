@@ -15,6 +15,7 @@ const getJobsSelector = (state: AppStateType) => {
 export const getAllUsers = createSelector(getUsersSelector,
     (users) =>{
         return users.filter(u => true);
+
 })
 
 export const getPageSize = (state: AppStateType) =>{
