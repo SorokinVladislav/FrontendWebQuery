@@ -12,13 +12,7 @@ const instance = axios.create({
 });
 
 const jobInstance = axios.create({
-
-
     baseURL: "http://localhost:8080/",
-    // headers: {
-    //     'Access-Control-Allow-Origin' : '*',
-    //     'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-    // },
 });
 
 export const jobsAPI = {
@@ -39,18 +33,23 @@ export const jobsAPI = {
                     return response.data;
                 })
             }
-            case "mistakes": {
-                             debugger
-
-                return jobInstance.get("mistakes").then(response => {
-
-                    return response.data;
-                })
-            }
-
-
-
         }
+    },
+    getJobDetails(jobid) {
+        return jobInstance.get(`jobs/${jobid}`).then(response => {
+            return response.data;
+        })
+    },
+    getReportDetails(jobid, xmltype) {
+        return jobInstance.get(`jobs/${jobid}/${xmltype}`).then(response => {
+            return response.data;
+        })
+    },
+    getAllMistakes() {
+        return jobInstance.get("mistakes").then(response => {
+            debugger
+            return response.data;
+        })
     }
 }
 
@@ -74,7 +73,6 @@ export const usersAPI = {
         console.warn("obsolete method.")
         return profileAPI.getProfile(userId);
     },
-
 }
 
 

@@ -2,7 +2,8 @@ import './App.css';
 import React from 'react'
 import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import AllJobsContainer from "./components/Users/AllJobsContainer";
-import HeaderContainer from "./components/Header/HeaderContainer";
+import MistakesContainer from "./components/Mistakes/MistakesContainer";
+
 import Login from "./components/Login/Login";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -16,6 +17,8 @@ import Preloader from "./components/common/preloader/Preloader";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
+const JobDetailsContainer = React.lazy(() => import('./components/JobDetails/JobDetailsContainer'))
+const ReportDetailsContainer = React.lazy(() => import('./components/ReportDetails/ReportDetailsContainer'))
 
 
 class App extends React.Component {
@@ -34,9 +37,9 @@ class App extends React.Component {
 
 
     render() {
-              if (!this.props.initialized) {
-                  return <Preloader/>
-              }
+        if (!this.props.initialized) {
+            return <Preloader/>
+        }
 
         return (<div className="container-fluid bg-dark">
                 <div className="row">
@@ -53,10 +56,7 @@ class App extends React.Component {
                         <Route path="/dialogs"
                                render={withSuspense(DialogsContainer)}/>
 
-                        <Route path="/profile/:userId?"
-                               render={withSuspense(ProfileContainer)}/>
-
-                        <Route path="/jobs"
+                        <Route exact path="/jobs"
                                render={() => <AllJobsContainer filter="allJobs"/>}/>
 
                         <Route path="/closed"
@@ -66,10 +66,14 @@ class App extends React.Component {
                                render={() => <AllJobsContainer filter="suspendJobs"/>}/>
 
                         <Route path="/mistakes"
-                               render={() => <AllJobsContainer filter="mistakes"/>}/>
+                               render={() => <MistakesContainer filter="mistakes"/>}/>
 
 
+                        <Route exact path="/jobdetails/:jobid?"
+                               render={withSuspense(JobDetailsContainer)}/>
 
+                        <Route exact path="/jobdetails/:jobid?/:xmltype?"
+                               render={withSuspense(ReportDetailsContainer)}/>
 
 
                         <Route path="/login"

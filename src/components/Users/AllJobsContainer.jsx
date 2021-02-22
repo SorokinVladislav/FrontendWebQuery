@@ -1,5 +1,5 @@
 import React from "react";
-import {requestJobs} from "../../redux/users_reducer";
+import {requestJobs} from "../../redux/jobs_reducer";
 import {connect} from 'react-redux';
 import Jobs from "./Jobs";
 import {compose} from "redux";
