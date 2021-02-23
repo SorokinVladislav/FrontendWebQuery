@@ -10,7 +10,7 @@ import $ from "jquery"
 let ReportDetails = ({reportdetails, ...props}) => {
 
     return <div>
-        <div className="col-md-8 col-lg-10 content-container">
+        <div className="col-md-8 col-lg-10 content-container mt-2">
 
             <div>
                 <div className="row textsize">
@@ -55,9 +55,9 @@ let ReportDetails = ({reportdetails, ...props}) => {
                 <div className="mainContainers border border-secondary rounded mt-2 mb-3" key={m.document_id}>
 
 
-                <div className="row">
+                <div className="row text-white">
 
-                    <div className="col-sm-1 itemsalign">
+                    <div className="col-sm-1 itemsalign ">
                         <span> {m.jobid}</span>
                     </div>
 

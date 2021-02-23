@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react'
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Redirect, Route, withRouter} from "react-router-dom";
 import AllJobsContainer from "./components/Users/AllJobsContainer";
 import MistakesContainer from "./components/Mistakes/MistakesContainer";
 
@@ -22,6 +22,7 @@ const ReportDetailsContainer = React.lazy(() => import('./components/ReportDetai
 
 
 class App extends React.Component {
+
     catchAllUnhandledError = (reason, promise) => {
         alert("Some error");
     }
@@ -72,8 +73,12 @@ class App extends React.Component {
                         <Route exact path="/jobdetails/:jobid?"
                                render={withSuspense(JobDetailsContainer)}/>
 
-                        <Route exact path="/jobdetails/:jobid?/:xmltype?"
+                        <Route exact path="/reportdetails/:jobid?/:xmltype?"
                                render={withSuspense(ReportDetailsContainer)}/>
+
+                        <Route exact path="/getrequestfrom10311/:reportid?"
+                               />
+
 
 
                         <Route path="/login"

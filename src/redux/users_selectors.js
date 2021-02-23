@@ -1,34 +1,20 @@
 import {AppStateType} from "./redux_store";
 import {createSelector} from "reselect";
 
-/*const getUsersSelector = (state: AppStateType) => {
-    return state.usersPage.users;
-}*/
-
-const getJobsSelector = (state: AppStateType) => {
+const getJobsSelector = (state) => {
     return state.usersPage.jobs;
 }
 
-const getMistakesSelector = (state: AppStateType) => {
+const getMistakesSelector = (state) => {
     return state.usersPage.mistakes;
 }
 
-const getJobDetailsSelector = (state: AppStateType) => {
+const getJobDetailsSelector = (state) => {
     return state.usersPage.jobdetails;
 }
 
-const getReportDetailsSelector = (state: AppStateType) => {
+const getReportDetailsSelector = (state) => {
     return state.usersPage.reportdetails;
-}
-
-/*export const getAllUsers = createSelector(getUsersSelector,
-    (users) =>{
-        return users.filter(u => true);
-
-})*/
-
-export const getPageSize = (state: AppStateType) =>{
-    return state.usersPage.pageSize;
 }
 
 
@@ -47,21 +33,24 @@ export const getAllJobDetails = createSelector(getJobDetailsSelector,
         return jobs.filter(() => true);
     })
 
-export const getAllReportDetails = createSelector(getJobDetailsSelector,
+export const getAllReportDetails = createSelector(getReportDetailsSelector,
     (reportdetails) =>{
+    if(reportdetails===null)
+        return null
+        else
         return reportdetails.filter(() => true);
     })
 
 
-export const getTotalUsersCount = (state: AppStateType) =>{
+export const getTotalUsersCount = (state) =>{
     return state.usersPage.totalUsersCount;
 }
 
-export const getCurrentPage = (state: AppStateType) =>{
+export const getCurrentPage = (state) =>{
     return state.usersPage.currentPage;
 }
 
-export const getIsFetching = (state: AppStateType) =>{
+export const getIsFetching = (state) =>{
     return state.usersPage.isFetching;
 }
 

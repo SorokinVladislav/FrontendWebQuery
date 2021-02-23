@@ -47,7 +47,6 @@ export const jobsAPI = {
     },
     getAllMistakes() {
         return jobInstance.get("mistakes").then(response => {
-            debugger
             return response.data;
         })
     }

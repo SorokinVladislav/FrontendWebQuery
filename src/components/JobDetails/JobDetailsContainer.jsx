@@ -3,7 +3,7 @@ import {requestJobDetails, requestJobs} from "../../redux/jobs_reducer";
 import {connect} from 'react-redux';
 import JobDetails from "./JobDetails";
 import {compose} from "redux";
-import {getAllJobDetails, getAllJobs} from "../../redux/users_selectors";
+import {getAllJobDetails} from "../../redux/users_selectors";
 
 
 class JobDetailsContainer extends React.Component <> {
@@ -15,7 +15,6 @@ class JobDetailsContainer extends React.Component <> {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.match.params.jobid !== prevProps.match.params.jobid) {
             this.props.getJobDetail(this.props.match.params.jobid);
-
         }
     }
 
@@ -28,7 +27,7 @@ class JobDetailsContainer extends React.Component <> {
 
 let mapStateToProps = (state) => {
     return {
-        jobid: state.usersPage.jobid,
+        // jobid: state.usersPage.jobid,
         jobdetails: getAllJobDetails(state),
     }
 }

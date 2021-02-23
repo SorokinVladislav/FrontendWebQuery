@@ -12,16 +12,15 @@ class ReportDetailsContainer extends React.Component <> {
             this.props.getReportDetail(this.props.match.params.jobid, this.props.match.params.xmltype);
     }
 
-    // componentDidUpdate(prevProps, prevState, snapshot) {
-    //     if (this.props.match.params.jobid !== prevProps.match.params.jobid) {
-    //         this.props.getJobDetail(this.props.match.params.jobid);
-    //
-    //     }
-    // }
-
+   /* componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.match.params.xmltype !== prevProps.match.params.xmltype) {
+            this.props.getReportDetail(this.props.match.params.jobid, this.props.match.params.xmltype);
+        }
+    }
+*/
     render() {
         return <>
-            <ReportDetails reportdetails={this.props.reportdetails} props={this.props}/>
+            <ReportDetails reportdetails={this.props.reportdetails}/>
         </>
     }
 }
