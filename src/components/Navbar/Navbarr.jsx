@@ -55,7 +55,7 @@ const Navbarr = (props) => {
 
                     <li className="nav-link">
                         <div className="col-sm" align="center">
-                            <NavLink to="/json" className="btn btn-secondary btn-block mainContainers">Администрирование</NavLink>
+                            <NavLink to="/administration" className="btn btn-secondary btn-block mainContainers">Администрирование</NavLink>
                         </div>
                     </li><br/>
 

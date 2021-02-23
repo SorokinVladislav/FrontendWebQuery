@@ -13,6 +13,7 @@ import {withSuspense} from "./hoc/withSuspense";
 import Navbarr from "./components/Navbar/Navbarr";
 import "./style.css"
 import Preloader from "./components/common/preloader/Preloader";
+import AdministrationContainer from "./components/Administration/AdministrationContainer";
 
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
@@ -68,6 +69,9 @@ class App extends React.Component {
 
                         <Route path="/mistakes"
                                render={() => <MistakesContainer filter="mistakes"/>}/>
+
+                        <Route path="/administration"
+                               render={() => <AdministrationContainer/>}/>
 
 
                         <Route exact path="/jobdetails/:jobid?"
