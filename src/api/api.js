@@ -15,6 +15,46 @@ const jobInstance = axios.create({
     baseURL: "http://localhost:8080/",
 });
 
+
+
+
+export const MdlpAPI = {
+
+    getRequest10311_10300(docid) {
+        return jobInstance.get(`getrequestfrom10311/${docid}`).then(response => {
+            return response;
+        })
+    },
+
+    getResponse10311_10300(docid) {
+        return jobInstance.get(`getresponsefrom10311/${docid}`).then(response => {
+            return response;
+        })
+    },
+}
+
+
+export const reportsAPI = {
+
+    getMapReport(jobid) {
+        return jobInstance.get(`jobs/${jobid}/mapreport`).then(response => {
+            return response;
+        })
+    },
+
+    getDetailedJob(jobid) {
+        return jobInstance.get(`jobs/${jobid}/detailedjob`).then(response => {
+            return response;
+        })
+    },
+
+
+}
+
+
+
+
+
 export const jobsAPI = {
     getAllJobs(typeOfJobs) {
         switch (typeOfJobs) {

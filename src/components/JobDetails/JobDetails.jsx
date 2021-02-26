@@ -120,18 +120,15 @@ let JobDetails = ({jobdetails, ...props}) => {
                 <p><b className="text-white alert m-1 bg-dark">Отчёты по работе:</b></p>
                 <div className="row alert m-1 bg-dark">
                     <div className="col">
-
-                        <form action="'/jobs/' + ${jid} + '/mapreport'" method="get">
                             <div className="input-group">
                                 <div className="input-group-append">
                                     <div className="col-sm" align="center">
-                                        <button className="btn btn-warning  btn-sm but2 shadowforbutton"
+                                        <button onClick={() =>props.mapReport(props.props.jobdetails[0][0].jobid)} className="btn btn-warning  btn-sm but2 shadowforbutton"
                                                 type="submit"><b>Map Report</b>
                                         </button>
                                     </div>
                                 </div>
                             </div>
-                        </form>
                     </div>
 
                     <div className="col">
@@ -271,15 +268,13 @@ let JobDetails = ({jobdetails, ...props}) => {
                             <span  name="document_id" className="text-white bg-dark">{m.reportid} </span>
 
                             <div className="m-2">
-                                <NavLink to={`/getrequestfrom10311/${m.reportid}`}
-                                   type="button"
+                                <button onClick={() => props.request10311_10300(m.reportid)}
                                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                                    отчёт</b></NavLink>
+                                    отчёт</b></button>
 
-                                <a href="/getresponsefrom10311/' + ${ele.reportid}"
-                                   type="button"
+                                <button onClick={() => props.getResponse10311_10300(m.reportid)}
                                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                                    ответ</b></a>
+                                    ответ</b></button>
                             </div>
                         </div>
 
@@ -299,17 +294,15 @@ let JobDetails = ({jobdetails, ...props}) => {
                     <div className="col-sm">
                     <span name="document_id" className="text-white bg-dark"> {m.orderid}</span>
 
-                    <div className="m-2">
-                    <a href="'/getrequestfrom10311/' + ${ele.orderid}"
-                    type="button"
-                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                    отчёт</b></a>
+                        <div className="m-2">
+                            <button onClick={() => props.request10311_10300(m.orderid)}
+                                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
+                                отчёт</b></button>
 
-                    <a href="'/getresponsefrom10311/' + ${ele.orderid}"
-                    type="button"
-                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                    ответ</b></a>
-                    </div>
+                            <button onClick={() => props.response10311_10300(m.orderid)}
+                                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
+                                ответ</b></button>
+                        </div>
                     </div>
 
                     </div>
