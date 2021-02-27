@@ -5,6 +5,7 @@ import {Alert} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import s from "./administration.module.css"
 import $ from "jquery"
+import {NavLink} from "react-router-dom";
 
 
 let Administration = ({reportdetails, ...props}) => {
@@ -21,21 +22,21 @@ let Administration = ({reportdetails, ...props}) => {
                     <div className="col-sm-4">
 
                         <div className="ml-3">
-                            <a href="/suz">
+                            <NavLink to="/suz">
                                 <button type="submit"
                                         className="m-2 btn btn-warning shadowforbutton"
                                         data-dismiss="modal">
                                     <b>СУЗ</b>
                                 </button>
-                            </a>
+                            </NavLink>
 
-                            <a href="/codeswaiting">
+                            <NavLink to="/codeswaiting">
                                 <button type="submit"
                                         className="m-2 btn btn-warning shadowforbutton"
                                         data-dismiss="modal">
                                     <b>В ожидании кодов</b>
                                 </button>
-                            </a>
+                            </NavLink>
                         </div>
 
 

@@ -1,11 +1,7 @@
 import React from 'react';
-import Paginator from "../common/Paginator/Paginator";
-import {JobType, UserType} from "../../types/types";
-import {Alert} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import s from "./jobs.module.css"
 import {NavLink} from "react-router-dom";
-import Post from "../Profile/MyPosts/Post/Post";
 
 
 let Jobs = ({currentPage, onPageChanged, totalUsersCount, pageSize, users, jobs, ...props}) => {

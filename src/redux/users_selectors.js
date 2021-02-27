@@ -5,6 +5,10 @@ const getJobsSelector = (state) => {
     return state.usersPage.jobs;
 }
 
+const getSuzSelector = (state) => {
+    return state.usersPage.suz;
+}
+
 const getMistakesSelector = (state) => {
     return state.usersPage.mistakes;
 }
@@ -23,6 +27,11 @@ const getReportDetailsSelector = (state) => {
 export const getAllJobs = createSelector(getJobsSelector,
     (jobs) =>{
         return jobs.filter(() => true);
+    })
+
+export const getSuz = createSelector(getSuzSelector,
+    (suz) =>{
+        return suz.filter(() => true);
     })
 
 export const getAllMistakesSelector = createSelector(getMistakesSelector,

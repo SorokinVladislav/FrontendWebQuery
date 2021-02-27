@@ -1,9 +1,8 @@
 import './App.css';
 import React from 'react'
-import {BrowserRouter, Redirect, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import AllJobsContainer from "./components/Users/AllJobsContainer";
 import MistakesContainer from "./components/Mistakes/MistakesContainer";
-
 import Login from "./components/Login/Login";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -14,6 +13,8 @@ import Navbarr from "./components/Navbar/Navbarr";
 import "./style.css"
 import Preloader from "./components/common/preloader/Preloader";
 import AdministrationContainer from "./components/Administration/AdministrationContainer";
+import SuzContainer from "./components/Suz/SuzContainer";
+import NavbarContainer from "./components/Navbar/NavbarContainer";
 
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
@@ -45,12 +46,10 @@ class App extends React.Component {
 
         return (<div className="container-fluid bg-dark">
                 <div className="row">
-                    <div className="col-md-8 col-lg-2 navbar-container">
-
-
-                        <Navbarr/>
+                    <div className="col-sm col-lg-2 navbar-container ">
+                        <NavbarContainer/>
                     </div>
-                    <div className="col-md-8 col-lg-10 content-container">
+                    <div className="col-sm-12 col-lg-10 content-container">
 
                         <Route exact path="/"
                                render={withSuspense(ProfileContainer)}/>
@@ -73,6 +72,11 @@ class App extends React.Component {
                         <Route path="/administration"
                                render={() => <AdministrationContainer/>}/>
 
+                        <Route path="/suz"
+                               render={() => <SuzContainer/>}/>
+
+                        <Route path="/codeswaiting"
+                               render={() =>  <AllJobsContainer filter="codeswaiting"/>}/>
 
                         <Route exact path="/jobdetails/:jobid?"
                                render={withSuspense(JobDetailsContainer)}/>
@@ -81,9 +85,7 @@ class App extends React.Component {
                                render={withSuspense(ReportDetailsContainer)}/>
 
                         <Route exact path="/getrequestfrom10311/:reportid?"
-                               />
-
-
+                        />
 
                         <Route path="/login"
                                render={() => <Login/>}/>

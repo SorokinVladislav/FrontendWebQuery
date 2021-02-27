@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Navbar.module.css"
-
 import "bootstrap"
 import "react-bootstrap"
 import {NavLink} from "react-router-dom";
+import {requestJobs} from "../../redux/jobs_reducer";
+import handleSubmit from "redux-form/lib/handleSubmit";
 
-const Navbarr = (props) => {
+
+const Navbarr = () => {
+
+    const onValueChange = (e)  =>{
+        setValue(e.currentTarget.value);
+    };
+
+    const [value, setValue] = useState();
 
     return (<nav className="navbar navbar-expand-md navbar-light">
 
@@ -17,8 +25,6 @@ const Navbarr = (props) => {
 
             <nav className="collapse navbar-collapse" id="navbar">
                 <ul className="navbar-nav">
-
-
                     <li className="nav-item">
                         <div className="col-sm ">
                             <img width="100%" align="center"
@@ -37,7 +43,8 @@ const Navbarr = (props) => {
                     </li>
                     <li className="nav-link">
                         <div className="col-sm" align="center">
-                            <NavLink to="/closed" className="btn btn-secondary btn-block mainContainers">Закрытые работы</NavLink>
+                            <NavLink to="/closed" className="btn btn-secondary btn-block mainContainers">Закрытые
+                                работы</NavLink>
                         </div>
                     </li>
                     <li className="nav-link">
@@ -55,52 +62,53 @@ const Navbarr = (props) => {
 
                     <li className="nav-link">
                         <div className="col-sm" align="center">
-                            <NavLink to="/administration" className="btn btn-secondary btn-block mainContainers">Администрирование</NavLink>
+                            <NavLink to="/administration"
+                                     className="btn btn-secondary btn-block mainContainers">Администрирование</NavLink>
                         </div>
-                    </li><br/>
+                    </li>
+                    <br/>
 
-
-                    <form action="@{/batch}" method="get">
-                        <div className="input-group mb-3 mainContainers ">
-                            <input type="text" className="form-control" name="batch"
-    placeholder="Введите номер серии"
-    aria-label="Введите номер серии" aria-describedby="basic-addon2"/>
+                        <form onSubmit={handleSubmit} className="input-group mb-3 mainContainers ">
+                            <input type="text" className="form-control h6"
+                                   placeholder="Введите номер серии"
+                                   aria-label="Введите номер серии" value={value} onChange={onValueChange} aria-describedby="basic-addon2"/>
                             <div className="input-group-append">
-                                <button className="btn bg-secondary text-white" type="submit">Поиск</button>
+                                <button onClick={requestJobs("batch", value)}
+                                        className="btn bg-secondary text-white" type="submit">Поиск
+                                </button>
                             </div>
-                        </div>
+                        </form>
 
-                    </form>
-
-                    <form action="@{/jobid}" method="get">
                         <div className="input-group mb-3 mainContainers">
                             <input type="text" className="form-control h6" name="jobid" placeholder="Введите JobID"
-    aria-label="Введите JobID" aria-describedby="basic-addon2"/>
+                                   aria-label="Введите JobID" aria-describedby="basic-addon2"/>
                             <div className="input-group-append">
-                                <button className="btn bg-secondary text-white" type="submit">Поиск</button>
+                                <button onClick={requestJobs("jobid", value)}
+                                        className="btn bg-secondary text-white" type="submit">Поиск
+                                </button>
                             </div>
                         </div>
-                    </form>
 
-                    <form action="@{/jobname}" method="get">
                         <div className="input-group mb-3 mainContainers">
                             <input type="text" className="form-control" name="jobname" placeholder="Введите JobName"
-    aria-label="Введите JobName" aria-describedby="basic-addon2"/>
+                                   aria-label="Введите JobName" aria-describedby="basic-addon2"/>
                             <div className="input-group-append">
-                                <button className="btn bg-secondary text-white" type="submit">Поиск</button>
+                                <button onClick={requestJobs("jobName", value)}
+                                        className="btn bg-secondary text-white" type="submit">Поиск
+                                </button>
                             </div>
                         </div>
-                    </form>
 
-                    <form action="@{/gtin}" method="get">
                         <div className="input-group mb-3 mainContainers">
                             <input type="text" className="form-control" name="gtin" placeholder="Введите GTIN"
-    aria-label="Введите GTIN" aria-describedby="basic-addon2"/>
+                                   aria-label="Введите GTIN" aria-describedby="basic-addon2"/>
                             <div className="input-group-append">
-                                <button className="btn bg-secondary text-white" type="submit">Поиск</button>
+                                <button onClick={requestJobs()}
+                                        className="btn bg-secondary text-white" type="submit">Поиск
+                                </button>
                             </div>
                         </div>
-                    </form>
+
 
                 </ul>
             </nav>

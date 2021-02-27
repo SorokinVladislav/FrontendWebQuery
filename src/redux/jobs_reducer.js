@@ -1,13 +1,13 @@
 import {jobsAPI, reportsAPI} from "../api/api";
 
 const SET_JOBS = 'SET_JOBS';
+const SET_SUZ = 'SET_SUZ';
 const SET_JOBDETAILS = 'SET_JOBDETAILS';
 const SET_MISTAKES = 'SET_MISTAKES';
 const SET_REPORTDETAILS = 'SET_REPORTDETAILS';
 const SET_MDLPCOUNT = 'SET_MDLPCOUNT';
 const SET_TWCOUNT = 'SET_TWCOUNT';
 const SET_JOBSTATUS = 'SET_JOBSTATUS';
-
 
 
 let initialState = {
@@ -23,6 +23,7 @@ let initialState = {
     mdlpcount: 0,
     twcount: 0,
     jobstatus: "",
+    suz: [],
 }
 
 
@@ -32,9 +33,13 @@ export const jobsReducer = (state = initialState, action) => {
             // @ts-ignore
             return {...state, jobs: action.jobs}
         }
+        case SET_SUZ: {
+            // @ts-ignore
+            return {...state, suz: action.suz}
+        }
         case SET_JOBDETAILS: {
             // @ts-ignore
-            return {...state, jobdetails: action.jobdetails, jobstatus: action.jobdetails[3][0].jobstatus }
+            return {...state, jobdetails: action.jobdetails, jobstatus: action.jobdetails[3][0].jobstatus}
         }
         case SET_MISTAKES: {
             // @ts-ignore
@@ -66,6 +71,8 @@ export const jobsReducer = (state = initialState, action) => {
 
 export const setJobs = (jobs) => ({type: SET_JOBS, jobs});
 
+export const setSuz = (suz) => ({type: SET_SUZ, suz});
+
 export const setMistakes = (mistakes) => ({type: SET_MISTAKES, mistakes});
 
 export const setJobDetails = (jobdetails) => ({type: SET_JOBDETAILS, jobdetails});
@@ -79,10 +86,17 @@ export const setTWCount = (twcount) => ({type: SET_TWCOUNT, twcount});
 export const setJobStatus = (jobstatus) => ({type: SET_JOBSTATUS, jobstatus});
 
 
-export const requestJobs = (typeOfJobs) => {
+export const requestJobs = (typeOfJobs, value) => {
     return async (dispatch) => {
-        let jobsData = await jobsAPI.getAllJobs(typeOfJobs);
+        let jobsData = await jobsAPI.getAllJobs(typeOfJobs, value);
         dispatch(setJobs(jobsData));
+    }
+}
+
+export const requestSuz = () => {
+    return async (dispatch) => {
+        let jobsData = await jobsAPI.getSuzAPI();
+        dispatch(setSuz(jobsData));
     }
 }
 
@@ -109,8 +123,6 @@ export const requestSuspendJob = (jobid) => {
         dispatch(setJobStatus("12 - Работа приостановлена"));
     }
 }
-
-
 
 export const requestTWCount = (jobid) => {
     return async (dispatch) => {

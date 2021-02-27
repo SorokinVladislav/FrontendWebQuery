@@ -16,7 +16,6 @@ const jobInstance = axios.create({
 });
 
 
-
 export const MdlpAPI = {
 
     getRequest10311_10300(docid) {
@@ -80,9 +79,10 @@ export const reportsAPI = {
         })
     },
     sendMessageToMDLPAPI(document_id, document_receipt) {
-        const sendMessageToMDLPInstance =  axios.create({
+        const sendMessageToMDLPInstance = axios.create({
             baseURL: "http://localhost:8080/",
-            params: {document_id, document_receipt}});
+            params: {document_id, document_receipt}
+        });
         return sendMessageToMDLPInstance.post(`jobs/sendmessagetomdlp`).then(response => {
             return response;
         })
@@ -92,7 +92,8 @@ export const reportsAPI = {
 
 
 export const jobsAPI = {
-    getAllJobs(typeOfJobs) {
+    getAllJobs(typeOfJobs, value) {
+        debugger
         switch (typeOfJobs) {
             case "allJobs": {
                 return jobInstance.get("jobs").then(response => {
@@ -109,11 +110,38 @@ export const jobsAPI = {
                     return response.data;
                 })
             }
+            case "codeswaiting": {
+                return jobInstance.get("codeswaiting").then(response => {
+                    return response.data;
+                })
+            }
+
+            case "batch": {
+                return jobInstance.get(`batch?batch=${value}`).then(response => {
+                    debugger
+                    return response.data;
+                })
+            }
+            case "jobid": {
+                return jobInstance.get(`jobid?jobid=${value}`).then(response => {
+                    return response.data;
+                })
+            }
+            case "jobName": {
+                return jobInstance.get(`jobname?jobname=${value}`).then(response => {
+                    return response.data;
+                })
+            }
         }
     },
     getJobDetails(jobid) {
         return jobInstance.get(`jobs/${jobid}`).then(response => {
-            debugger
+            return response.data;
+        })
+    },
+
+    getSuzAPI() {
+        return jobInstance.get(`suz`).then(response => {
             return response.data;
         })
     },
@@ -146,24 +174,23 @@ export const jobsAPI = {
         })
     },
 
-    resendReportAPI (jobid, xmltype) {
+    resendReportAPI(jobid, xmltype) {
         return jobInstance.get(`jobs/${jobid}/${xmltype}/resend`).then(response => {
             return response.data;
         })
     },
 
-    setReportStatus7API (jobid, xmltype) {
+    setReportStatus7API(jobid, xmltype) {
         return jobInstance.get(`jobs/${jobid}/${xmltype}/status7`).then(response => {
             return response.data;
         })
     },
 
-    resendReport9151API (jobid, xmltype) {
+    resendReport9151API(jobid, xmltype) {
         return jobInstance.get(`jobs/${jobid}/${xmltype}/resend9151`).then(response => {
             return response.data;
         })
     },
-
 
 
 }
