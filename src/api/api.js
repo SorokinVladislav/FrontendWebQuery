@@ -8,7 +8,7 @@ const instance = axios.create({
     baseURL: "https://social-network.samuraijs.com/api/1.0/",
     headers: {
         "API-KEY": "b1056f8e-5782-4993-9e7b-ed38d6cd308e"
-    }
+    },
 });
 
 const jobInstance = axios.create({
@@ -17,17 +17,36 @@ const jobInstance = axios.create({
 
 
 
-
 export const MdlpAPI = {
 
     getRequest10311_10300(docid) {
-        return jobInstance.get(`getrequestfrom10311/${docid}`).then(response => {
+        return jobInstance.get(`getrequestfrom10311/${docid}`, {
+            responseType: 'blob',
+        }).then(response => {
             return response;
         })
     },
 
     getResponse10311_10300(docid) {
-        return jobInstance.get(`getresponsefrom10311/${docid}`).then(response => {
+        return jobInstance.get(`getresponsefrom10311/${docid}`, {
+            responseType: 'blob',
+        }).then(response => {
+            return response;
+        })
+    },
+
+    getReportResponse(docid) {
+        return jobInstance.get(`getresponse/${docid}`, {
+            responseType: 'blob',
+        }).then(response => {
+            return response;
+        })
+    },
+
+    getReportRequest(docid) {
+        return jobInstance.get(`getrequest/${docid}`, {
+            responseType: 'blob',
+        }).then(response => {
             return response;
         })
     },
@@ -37,22 +56,39 @@ export const MdlpAPI = {
 export const reportsAPI = {
 
     getMapReport(jobid) {
-        return jobInstance.get(`jobs/${jobid}/mapreport`).then(response => {
+        return jobInstance.get(`jobs/${jobid}/mapreport`, {
+            responseType: 'blob',
+        }).then(response => {
             return response;
         })
     },
-
     getDetailedJob(jobid) {
-        return jobInstance.get(`jobs/${jobid}/detailedjob`).then(response => {
+        return jobInstance.get(`jobs/${jobid}/detailedjob`, {
+            responseType: 'blob',
+        }).then(response => {
             return response;
         })
     },
-
+    getMdlpCount(jobid) {
+        return jobInstance.get(`jobs/${jobid}/mdlpcount`).then(response => {
+            return response;
+        })
+    },
+    getTWCount(jobid) {
+        return jobInstance.get(`jobs/${jobid}/tracewaycount`).then(response => {
+            return response;
+        })
+    },
+    sendMessageToMDLPAPI(document_id, document_receipt) {
+        const sendMessageToMDLPInstance =  axios.create({
+            baseURL: "http://localhost:8080/",
+            params: {document_id, document_receipt}});
+        return sendMessageToMDLPInstance.post(`jobs/sendmessagetomdlp`).then(response => {
+            return response;
+        })
+    },
 
 }
-
-
-
 
 
 export const jobsAPI = {
@@ -77,6 +113,7 @@ export const jobsAPI = {
     },
     getJobDetails(jobid) {
         return jobInstance.get(`jobs/${jobid}`).then(response => {
+            debugger
             return response.data;
         })
     },
@@ -89,7 +126,46 @@ export const jobsAPI = {
         return jobInstance.get("mistakes").then(response => {
             return response.data;
         })
-    }
+    },
+
+    setRejectJob(jobid) {
+        return jobInstance.get(`jobs/${jobid}/reject`).then(response => {
+            return response.data;
+        })
+    },
+
+    setSuspendJob(jobid) {
+        return jobInstance.get(`jobs/${jobid}/suspend`).then(response => {
+            return response.data;
+        })
+    },
+
+    setUIDGeneratedJob(jobid) {
+        return jobInstance.get(`jobs/${jobid}/uidgenerated`).then(response => {
+            return response.data;
+        })
+    },
+
+    resendReportAPI (jobid, xmltype) {
+        return jobInstance.get(`jobs/${jobid}/${xmltype}/resend`).then(response => {
+            return response.data;
+        })
+    },
+
+    setReportStatus7API (jobid, xmltype) {
+        return jobInstance.get(`jobs/${jobid}/${xmltype}/status7`).then(response => {
+            return response.data;
+        })
+    },
+
+    resendReport9151API (jobid, xmltype) {
+        return jobInstance.get(`jobs/${jobid}/${xmltype}/resend9151`).then(response => {
+            return response.data;
+        })
+    },
+
+
+
 }
 
 export const usersAPI = {

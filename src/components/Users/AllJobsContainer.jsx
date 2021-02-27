@@ -14,7 +14,6 @@ class AllJobsContainer extends React.Component <>{
 
     render() {
         return <>
-            <h2>{this.props.filter}</h2>
             <Jobs jobs={this.props.jobs}  />
         </>
     }
@@ -27,7 +26,6 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-
     connect(mapStateToProps,
         {
              getJobs: requestJobs})

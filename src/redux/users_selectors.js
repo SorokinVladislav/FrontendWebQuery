@@ -18,6 +18,8 @@ const getReportDetailsSelector = (state) => {
 }
 
 
+
+
 export const getAllJobs = createSelector(getJobsSelector,
     (jobs) =>{
         return jobs.filter(() => true);
@@ -46,13 +48,11 @@ export const getTotalUsersCount = (state) =>{
     return state.usersPage.totalUsersCount;
 }
 
-export const getCurrentPage = (state) =>{
-    return state.usersPage.currentPage;
+export const getJobStatus = (state) =>{
+    return state.usersPage.jobstatus;
 }
 
-export const getIsFetching = (state) =>{
-    return state.usersPage.isFetching;
-}
+
 
 
 

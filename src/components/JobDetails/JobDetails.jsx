@@ -8,28 +8,29 @@ import $ from "jquery"
 import {NavLink} from "react-router-dom";
 
 
-let JobDetails = ({jobdetails, ...props}) => {
+let JobDetails = ({jobdetails,twcount, mdlpcount, ...props}) => {
 
+if (jobdetails.length===4) {
     return <div>
 
         <div className="alert">
-            <div className="row textsize">
+                    <div className="row textsize">
 
                 <div className="col-sm">
                     <p><b className="text-warning">Наименование:</b> <span className="text-white bg-dark">
-                            {props.props.jobdetails.length > 0 && props.props.jobdetails[0][0].product_name}
+                            {props.props.jobdetails[3][0].product_name}
                         </span></p>
                 </div>
 
                 <div className="col-sm">
                     <p><b className="text-warning">JobName:</b> <span className="text-white bg-dark">
-                                            {props.props.jobdetails.length > 0 && props.props.jobdetails[0][0].jobname}
+                                            {props.props.jobdetails[3][0].jobname}
                         </span></p>
                 </div>
 
                 <div className="col-sm">
                     <p><b className="text-warning">Статус работы:</b> <span className="text-white bg-dark">
-                                            {props.props.jobdetails.length > 0 && props.props.jobdetails[0][0].jobstatus}
+                                            {props.props.jobdetails[3][0].jobstatus}
                         </span></p>
                 </div>
 
@@ -73,8 +74,7 @@ let JobDetails = ({jobdetails, ...props}) => {
         </div>
 
 
-
-        {jobdetails.length>0 && jobdetails[0].map(m =>
+        {jobdetails.length > 0 && jobdetails[0].map(m =>
             <div className="mainContainers border border-secondary rounded mt-2 mb-3" key={m.document_id}>
 
                 <div className="row text-white itemsalign">
@@ -100,7 +100,7 @@ let JobDetails = ({jobdetails, ...props}) => {
                     </div>
 
                     <div className="col-sm itemsalign">
-                        <span> {m.updateddate}</span>
+                        <span> {m.updateddate}    </span>
                     </div>
 
                     <div className="col-sm-2 itemsalign" align="center">
@@ -120,32 +120,29 @@ let JobDetails = ({jobdetails, ...props}) => {
                 <p><b className="text-white alert m-1 bg-dark">Отчёты по работе:</b></p>
                 <div className="row alert m-1 bg-dark">
                     <div className="col">
-                            <div className="input-group">
-                                <div className="input-group-append">
-                                    <div className="col-sm" align="center">
-                                        <button onClick={() =>props.mapReport(props.props.jobdetails[0][0].jobid)} className="btn btn-warning  btn-sm but2 shadowforbutton"
-                                                type="submit"><b>Map Report</b>
-                                        </button>
-                                    </div>
+                        <div className="input-group">
+                            <div className="input-group-append">
+                                <div className="col-sm" align="center">
+                                    <button onClick={() => props.mapReport(props.props.jobdetails[3][0].jid)}
+                                            className="btn btn-warning  btn-sm but2 shadowforbutton"
+                                            type="submit"><b>Map Report</b>
+                                    </button>
                                 </div>
                             </div>
+                        </div>
                     </div>
 
                     <div className="col">
-
-                        <form action="'/jobs/' + ${jid} + '/detailedjob'" method="get">
-                            <div className="input-group">
-                                <div className="input-group-append">
-                                    <div className="col-sm" align="center">
-                                        <button className="btn btn-warning btn-sm but2 shadowforbutton"
-                                                id="detailed" type="submit"><b>Detailed
-                                            Job</b>
-                                        </button>
-                                    </div>
+                        <div className="input-group">
+                            <div className="input-group-append">
+                                <div className="col-sm" align="center">
+                                    <button onClick={() => props.detailedJob(props.props.jobdetails[3][0].jid)}
+                                            className="btn btn-warning  btn-sm but2 shadowforbutton"
+                                            type="submit"><b>Detailed Job</b>
+                                    </button>
                                 </div>
                             </div>
-                        </form>
-
+                        </div>
                     </div>
                 </div>
 
@@ -157,44 +154,46 @@ let JobDetails = ({jobdetails, ...props}) => {
                 <div className="row alert m-1 bg-dark ">
                     <div className="col">
 
-                        <form action="'/jobs/' + ${jid} + '/mdlpcount'" method="get">
-                            <div className="input-group">
-                                <div className="input-group-append">
-                                    <div className="col-sm" align="center">
-                                        <button className="btn btn-warning  btn-sm but2 shadowforbutton"
-                                                type="submit"><b>В МДЛП</b>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="col-sm-9 mt-3">
-                                    <input className="form-control shadowforbutton" type="number but2"
-                                           value="${count}"></input>
+
+                        <div className="input-group">
+                            <div className="input-group-append">
+                                <div className="col-sm" align="center">
+                                    <button onClick={() => props.props.getCountMDLP(props.props.jobdetails[3][0].jid)}
+                                            className="btn btn-warning  btn-sm but2 shadowforbutton"
+                                    ><b>В МДЛП</b>
+                                    </button>
                                 </div>
                             </div>
-                        </form>
+                            <div className="col-sm-9 mt-3">
+                                    <span className="form-control shadowforbutton" type="but2">
+                                        <b> {mdlpcount}</b>
+                                    </span>
+                            </div>
+                        </div>
 
 
                     </div>
 
                     <div className="col">
 
-                        <form action="'/jobs/' + ${jid} + '/tracewaycount'" method="get">
-                            <div className="input-group">
-                                <div className="input-group-append">
-                                    <div className="col-sm" align="center">
-                                        <button className="btn btn-warning btn-sm but2 shadowforbutton"
-                                                type="submit"><b>В
-                                            TraceWay</b>
-                                        </button>
-                                    </div>
 
+                        <div className="input-group">
+                            <div className="input-group-append">
+                                <div className="col-sm" align="center">
+                                    <button onClick={() => props.props.getCountTW(props.props.jobdetails[3][0].jid)}
+                                            className="btn btn-warning  btn-sm but2 shadowforbutton"
+                                    ><b>В TraceWay</b>
+                                    </button>
                                 </div>
-                                <div className="col-sm-9 mt-3">
-                                    <input className="form-control shadowforbutton" type="number"
-                                           value="${countTW}"></input>
-                                </div>
+
                             </div>
-                        </form>
+                            <div className="col-sm-9 mt-3">
+                                    <span className="form-control shadowforbutton">
+                                        <b> {twcount}</b>
+                                    </span>
+                            </div>
+                        </div>
+
 
                     </div>
                 </div>
@@ -215,7 +214,8 @@ let JobDetails = ({jobdetails, ...props}) => {
                         <div className="input-group blocktext">
                             <div className="input-group-append">
                                 <div className="col-sm" align="center">
-                                    <button className="btn btn-warning btn-sm but2 shadowforbutton" id="elem1">
+                                    <button onClick={() => props.props.getRejectJob(props.props.jobdetails[3][0].jid)}
+                                        className="btn btn-warning btn-sm but2 shadowforbutton" id="elem1">
                                         <b>
                                             Reject </b>
                                     </button>
@@ -230,7 +230,8 @@ let JobDetails = ({jobdetails, ...props}) => {
                         <div className="input-group blocktext">
                             <div className="input-group-append">
                                 <div className="col-sm" align="center">
-                                    <button className="btn btn-warning btn-sm but2 shadowforbutton" id="elem2">
+                                    <button onClick={() => props.props.getUIDGeneratedJob(props.props.jobdetails[3][0].jid)}
+                                        className="btn btn-warning btn-sm but2 shadowforbutton" id="elem2">
                                         <b>UIDGenerated</b>
                                     </button>
                                 </div>
@@ -243,70 +244,71 @@ let JobDetails = ({jobdetails, ...props}) => {
                         <div className="input-group blocktext">
                             <div className="input-group-append">
                                 <div className="col-sm" align="center">
-                                    <button className="btn btn-warning btn-sm but2 shadowforbutton" id="elem3">
+                                    <button onClick={() => props.props.getSuspendJob(props.props.jobdetails[3][0].jid)}
+                                            className="btn btn-warning btn-sm but2 shadowforbutton" id="elem3">
                                         <b>Suspend</b>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>;
                 </div>
 
-                {jobdetails[2]!=null > 0 &&(<div className="mt-5 mb-3"><p><b
-                    className="text-white alert m-1 bg-dark">Завершение
-                    упаковки (отчёт
-                    10311):</b></p></div>
+                {jobdetails[2] != null > 0 && (<div className="mt-5 mb-3"><p><b
+                        className="text-white alert m-1 bg-dark">Завершение
+                        упаковки (отчёт
+                        10311):</b></p></div>
                 )
                 }
 
                 <div className="bg-dark">
 
-                    {jobdetails.length>0 && jobdetails[2].map(m =>
-                    <div className="row ml-1">
+                    {jobdetails.length > 0 && jobdetails[2].map(m =>
+                        <div className="row ml-1">
 
-                        <div className="col-sm">
-                            <span  name="document_id" className="text-white bg-dark">{m.reportid} </span>
+                            <div className="col-sm">
+                                <span name="document_id" className="text-white bg-dark">{m.reportid} </span>
 
-                            <div className="m-2">
-                                <button onClick={() => props.request10311_10300(m.reportid)}
-                                   className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                                    отчёт</b></button>
+                                <div className="m-2">
+                                    <button onClick={() => props.request10311_10300(m.reportid)}
+                                            className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
+                                        отчёт</b></button>
 
-                                <button onClick={() => props.getResponse10311_10300(m.reportid)}
-                                   className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                                    ответ</b></button>
+                                    <button onClick={() => props.response10311_10300(m.reportid)}
+                                            className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
+                                        ответ</b></button>
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
                     )}
 
                 </div>
 
 
-                {jobdetails[1]!=null>0 && (<div className="mt-5 mb-3"><p><b
+                {jobdetails[1] != null > 0 && (<div className="mt-5 mb-3"><p><b
                     className="text-white alert m-1 bg-dark">Эмиссия кодов маркировки (отчёт
                     10300):</b></p></div>)
                 }
-                {jobdetails.length > 0 &&  jobdetails[1].map(m =>
+                {jobdetails.length > 0 && jobdetails[1].map(m =>
                     <div className="row ml-1 bg-dark">
 
-                    <div className="col-sm">
-                    <span name="document_id" className="text-white bg-dark"> {m.orderid}</span>
+                        <div className="col-sm">
+                            <span name="document_id" className="text-white bg-dark"> {m.orderid}</span>
 
-                        <div className="m-2">
-                            <button onClick={() => props.request10311_10300(m.orderid)}
-                                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                                отчёт</b></button>
+                            <div className="m-2">
+                                <button onClick={() => props.request10311_10300(m.orderid)}
+                                        className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
+                                    отчёт</b></button>
 
-                            <button onClick={() => props.response10311_10300(m.orderid)}
-                                    className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
-                                ответ</b></button>
+                                <button onClick={() => props.response10311_10300(m.orderid)}
+                                        className="ml-2 btn btn-warning btn-sm button shadowforbutton"><b> Скачать
+                                    ответ</b></button>
+                            </div>
                         </div>
-                    </div>
 
                     </div>
-                    )
+                )
 
                 }
 
@@ -468,6 +470,10 @@ let JobDetails = ({jobdetails, ...props}) => {
 
 
     </div>
+}
+else return <div>
+    Загрузка
+</div>
 }
 
 
