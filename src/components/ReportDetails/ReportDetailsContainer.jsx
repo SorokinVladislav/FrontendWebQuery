@@ -6,6 +6,8 @@ import {compose} from "redux";
 import {getAllReportDetails} from "../../redux/users_selectors";
 import {jobsAPI, MdlpAPI, reportsAPI} from "../../api/api";
 import {saveAs} from 'file-saver';
+import {render} from "react-dom";
+import {Redirect} from "react-router-dom";
 
 
 class ReportDetailsContainer extends React.Component <> {
@@ -14,18 +16,57 @@ class ReportDetailsContainer extends React.Component <> {
         this.props.getReportDetail(this.props.match.params.jobid, this.props.match.params.xmltype);
     }
 
+    handleBack(jobid) {
+        this.props.history.push('/jobdetails/'+jobid);
+    }
+
+    resendReport = (jid, id) => {
+        let bool = window.confirm("Вы уверены?")
+        if (bool) {
+            jobsAPI.resendReportAPI(jid, id).then((response) => {
+                this.handleBack(jid);
+                alert("Успешно");
+            })
+        }
+    }
+
+    resendReport9151 = (jid, docid) => {
+        let bool = window.confirm("Вы уверены?")
+        if (bool) {
+            jobsAPI.resendReport9151API(jid, docid).then((response) => {
+                this.handleBack(jid);
+                alert("Успешно");
+            })
+        }
+    }
+
+    setReportStatus7 = (jid, id) => {
+        let bool = window.confirm("Вы уверены?")
+        if (bool) {
+            jobsAPI.setReportStatus7API(jid, id).then((response) => {
+                this.handleBack(jid);
+                alert("Успешно");
+            })
+        }
+    }
+
     render() {
         return <>
             <ReportDetails reportdetails={this.props.reportdetails}
                            reportResponse={reportResponse}
                            reportRequest={reportRequest}
-                           resendReport={resendReport}
-                           resendReport9151={resendReport9151}
-                           setReportStatus7={setReportStatus7}
+                           resendReport={this.resendReport}
+                           resendReport9151={this.resendReport9151}
+                           setReportStatus7={this.setReportStatus7}
                            sendMessageToMDLP={sendMessageToMDLP}
+                           handleBack={this.handleBack}
                            props={this.props}/>
         </>
     }
+
+
+
+
 }
 
 
@@ -42,34 +83,14 @@ let reportRequest = (docid) => {
     })
 }
 
-let resendReport = (jid, xmltype) => {
-    jobsAPI.resendReportAPI(jid, xmltype).then((response) => {
-        alert("Успешно");
-    })
-}
-
-let resendReport9151 = (jid, xmltype) => {
-    jobsAPI.resendReport9151API(jid, xmltype).then((response) => {
-        alert("Успешно");
-    })
-}
-
-let setReportStatus7 = (jid, xmltype) => {
-    jobsAPI.setReportStatus7API(jid, xmltype).then((response) => {
-        alert("Успешно");
-    })
-}
-
 let sendMessageToMDLP = (document_id, document_receipt) => {
-    reportsAPI.sendMessageToMDLPAPI(document_id, document_receipt).then((response) => {
-        alert("Успешно");
-    })
+    let bool = window.confirm("Вы уверены?")
+    if (bool) {
+        reportsAPI.sendMessageToMDLPAPI(document_id, document_receipt).then((response) => {
+            alert("Успешно");
+        })
+    }
 }
-
-
-
-
-
 
 
 let mapStateToProps = (state) => {

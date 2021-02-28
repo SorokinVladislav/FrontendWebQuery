@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import "./Navbar.module.css"
-import "bootstrap"
 import "react-bootstrap"
 import {NavLink} from "react-router-dom";
 import {requestJobs} from "../../redux/jobs_reducer";

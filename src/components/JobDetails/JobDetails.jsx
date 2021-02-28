@@ -1,9 +1,5 @@
 import React from 'react';
-import Paginator from "../common/Paginator/Paginator";
-import {JobType, UserType} from "../../types/types";
-import {Alert} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import s from "./jobDetails.module.css"
 import $ from "jquery"
 import {NavLink} from "react-router-dom";
 
@@ -455,7 +451,7 @@ if (jobdetails.length===4) {
 
         <div text="${empty}" id="empty" className="text-white bg-dark" hidden></div>
         <div text="${noaccess}" id="noaccess" className="text-white bg-dark" hidden></div>
-
+{/*
         <script>
             elem1.onclick = function () {
             $('#myModal1').modal()
@@ -466,7 +462,7 @@ if (jobdetails.length===4) {
             elem3.onclick = function () {
             $('#myModal3').modal()
         }
-        </script>
+        </script>*/}
 
 
     </div>

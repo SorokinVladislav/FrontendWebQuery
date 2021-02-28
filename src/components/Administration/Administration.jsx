@@ -1,10 +1,5 @@
 import React from 'react';
-import Paginator from "../common/Paginator/Paginator";
-import {JobType, UserType} from "../../types/types";
-import {Alert} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import s from "./administration.module.css"
-import $ from "jquery"
 import {NavLink} from "react-router-dom";
 
 

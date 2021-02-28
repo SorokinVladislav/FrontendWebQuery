@@ -101,26 +101,35 @@ export const requestSuz = () => {
 }
 
 export const requestUIDGeneratedJob = (jobid) => {
-    return async (dispatch) => {
-        let jobsData = await jobsAPI.setUIDGeneratedJob(jobid);
-        alert("Успешно");
-        dispatch(setJobStatus("4 - Линия выделена"));
+    let bool = window.confirm("Вы уверены?")
+    if (bool) {
+        return async (dispatch) => {
+            let jobsData = await jobsAPI.setUIDGeneratedJob(jobid);
+            alert("Успешно");
+            dispatch(setJobStatus("4 - Линия выделена"));
+        }
     }
 }
 
 export const requestRejectJob = (jobid) => {
-    return async (dispatch) => {
-        let jobsData = await jobsAPI.setRejectJob(jobid);
-        alert("Успешно");
-        dispatch(setJobStatus("16 - Работа отклонена"));
+    let bool = window.confirm("Вы уверены?")
+    if (bool) {
+        return async (dispatch) => {
+            let jobsData = await jobsAPI.setRejectJob(jobid);
+            alert("Успешно");
+            dispatch(setJobStatus("16 - Работа отклонена"));
+        }
     }
 }
 
 export const requestSuspendJob = (jobid) => {
-    return async (dispatch) => {
-        let jobsData = await jobsAPI.setSuspendJob(jobid);
-        alert("Успешно");
-        dispatch(setJobStatus("12 - Работа приостановлена"));
+    let bool = window.confirm("Вы уверены?")
+    if (bool) {
+        return async (dispatch) => {
+            let jobsData = await jobsAPI.setSuspendJob(jobid);
+            alert("Успешно");
+            dispatch(setJobStatus("12 - Работа приостановлена"));
+        }
     }
 }
 

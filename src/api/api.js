@@ -174,20 +174,20 @@ export const jobsAPI = {
         })
     },
 
-    resendReportAPI(jobid, xmltype) {
-        return jobInstance.get(`jobs/${jobid}/${xmltype}/resend`).then(response => {
+    resendReportAPI(jobid, id) {
+        return jobInstance.get(`jobs/${jobid}/${id}/resend`).then(response => {
             return response.data;
         })
     },
 
-    setReportStatus7API(jobid, xmltype) {
-        return jobInstance.get(`jobs/${jobid}/${xmltype}/status7`).then(response => {
+    setReportStatus7API(jobid, id) {
+        return jobInstance.get(`jobs/${jobid}/${id}/status7`).then(response => {
             return response.data;
         })
     },
 
-    resendReport9151API(jobid, xmltype) {
-        return jobInstance.get(`jobs/${jobid}/${xmltype}/resend9151`).then(response => {
+    resendReport9151API(jobid, docid) {
+        return jobInstance.get(`jobs/${jobid}/${docid}/resend9151`).then(response => {
             return response.data;
         })
     },

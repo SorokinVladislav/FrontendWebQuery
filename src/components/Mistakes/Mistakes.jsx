@@ -1,10 +1,7 @@
 import React from 'react';
-import Paginator from "../common/Paginator/Paginator";
-import {JobType, UserType} from "../../types/types";
-import {Alert} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import s from "./mistakes.module.css"
-import $ from "jquery"
+import {NavLink} from "react-router-dom";
 
 
 let Mistakes = ({mistakes, ...props}) => {
@@ -77,8 +74,9 @@ let Mistakes = ({mistakes, ...props}) => {
                     </div>
 
                     <div className="col-sm-2 itemsalign" align="center">
-                        <a href="'/jobs/' + ${ele.jobid}+'/'+ ${ele.xmltype}"
-                           className="btn btn-warning shadowforbutton"><b>Детальнее</b></a>
+                        <NavLink to={`/reportdetails/` + m.jobid + "/" + m.xmltype}
+                                 className="btn btn-warning shadowforbutton">
+                            <b>Детальнее</b></NavLink>
                     </div>
                 </div>
 

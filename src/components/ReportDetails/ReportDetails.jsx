@@ -1,15 +1,10 @@
 import React from 'react';
-import Paginator from "../common/Paginator/Paginator";
-import {JobType, UserType} from "../../types/types";
-import {Alert} from "react-bootstrap";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import s from "./reportDetails.module.css"
 import $ from "jquery"
 
 
 let ReportDetails = ({reportdetails, ...props}) => {
 
-    if (reportdetails.length>0) {
+    if (reportdetails.length > 0) {
         return <div>
             <div className="col-md-8 col-lg-10 content-container mt-2">
 
@@ -114,7 +109,9 @@ let ReportDetails = ({reportdetails, ...props}) => {
                                     <div className="input-group">
                                         <div className="input-group-append">
                                             <div className="col-sm" align="center">
-                                                <button onClick={() => props.resendReport(m.jobid, m.xmltype)}
+                                                <button onClick={() =>
+                                                    props.resendReport(m.jobid, m.id)
+                                                }
                                                         className="btn btn-warning btn-sm shadowforbutton" id="elem1">
                                                     <b>Переотправить</b>
                                                 </button>
@@ -129,7 +126,9 @@ let ReportDetails = ({reportdetails, ...props}) => {
                                     <div className="input-group">
                                         <div className="input-group-append">
                                             <div className="col-sm" align="center">
-                                                <button onClick={() => props.setReportStatus7(m.jobid, m.xmltype)}
+                                                <button onClick={() =>
+                                                    props.setReportStatus7(m.jobid, m.id)
+                                                }
                                                         className="btn btn-warning btn-sm shadowforbutton" id="elem2">
                                                     <b>Статус
                                                         - успешно</b>
@@ -145,7 +144,9 @@ let ReportDetails = ({reportdetails, ...props}) => {
                                     <div className="input-group">
                                         <div className="input-group-append">
                                             <div className="col-sm" align="center">
-                                                <button onClick={() => props.resendReport9151(m.jobid, m.xmltype)}
+                                                <button onClick={() => {
+                                                        props.resendReport9151(m.jobid, m.document_id);
+                                                }}
                                                         className="btn btn-warning btn-sm shadowforbutton" id="elem3">
                                                     <b>Переотправить
                                                         9151</b>
@@ -168,7 +169,7 @@ let ReportDetails = ({reportdetails, ...props}) => {
                     </div>
 
 
-                    {(reportdetails[0].transactionstatus == "7 – Успешно получена квитанция") &&
+                    {(reportdetails[0].transactionstatus !== "7 – Успешно получена квитанция") &&
                     <div className="col-sm-6">
 
                         <p><b className="text-white alert m-1 bg-dark">Отправка письма в МДЛП:</b></p>
@@ -311,7 +312,7 @@ let ReportDetails = ({reportdetails, ...props}) => {
                     </div>
                 </div>
 */}
-
+                {/*
                 <script>
                     elem1.onclick = function() {
                     $('#myModal1').modal()}
@@ -326,13 +327,12 @@ let ReportDetails = ({reportdetails, ...props}) => {
                     $('#myModal7').modal()}
 
 
-                </script>
+                </script>*/}
 
 
             </div>
         </div>
-    }
-    else return <div>
+    } else return <div>
         Загрузка
     </div>
 }

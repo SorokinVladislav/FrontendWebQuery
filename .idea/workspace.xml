@@ -9,14 +9,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileStatus.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/UsersContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/UsersContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/redux_store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux_store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users_reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/users_selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_selectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Administration/Administration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Administration/Administration.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/JobDetails/JobDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/JobDetails/JobDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Mistakes/Mistakes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Mistakes/Mistakes.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbarr.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbarr.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetails.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetailsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetailsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/jobs_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/jobs_reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +58,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.15.4" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.14.22" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.31" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -71,7 +71,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="ts.external.directory.path" value="C:\Users\vla_o\React-Project\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\vla_o\WebstormProjects\React-Project\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -175,6 +175,8 @@
       <workItem from="1613113825225" duration="2591000" />
       <workItem from="1613116464786" duration="2773000" />
       <workItem from="1613121644710" duration="987000" />
+      <workItem from="1614512303454" duration="1456000" />
+      <workItem from="1614513832592" duration="6991000" />
     </task>
     <task id="LOCAL-00001" summary="23.01">
       <created>1611412254922</created>
