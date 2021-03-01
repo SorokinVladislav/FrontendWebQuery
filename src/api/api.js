@@ -1,18 +1,52 @@
-import axios from "axios";
+ //import axios from "axios";
 import FormData from "form-data";
 
 
-const instance = axios.create({
+let axios = require("axios");
 
-    withCredentials: true,
-    baseURL: "https://social-network.samuraijs.com/api/1.0/",
-    headers: {
-        "API-KEY": "b1056f8e-5782-4993-9e7b-ed38d6cd308e"
+export const jwtToken = localStorage.getItem("authorization");
+
+axios.interceptors.request.use(
+    function(config) {
+        if (jwtToken) {
+            config.headers["authorization"] = "Bearer " + jwtToken;
+        }
+        return config;
     },
+    function(err) {
+        return Promise.reject(err);
+    }
+);
+
+
+
+export const authApi = {
+    me() {
+        return instance.get(`/jobs`)
+    },
+    login(email, password) {
+        return loginInstance.post(`/authenticate`, {"username":email, "password":password})
+    },
+    logout() {
+        return jobInstance.delete(`/authenticate`)
+    }
+}
+
+
+
+const instance = axios.create({
+    baseURL: "http://localhost:8080/",
+    headers: {"authorization" : "Bearer " + jwtToken}
 });
 
 const jobInstance = axios.create({
     baseURL: "http://localhost:8080/",
+    headers: {"authorization" : "Bearer " + jwtToken}
+});
+
+const loginInstance = axios.create({
+    baseURL: "http://localhost:8080/",
+    headers: {"authorization" : "Bearer " + jwtToken}
 });
 
 
@@ -93,7 +127,6 @@ export const reportsAPI = {
 
 export const jobsAPI = {
     getAllJobs(typeOfJobs, value) {
-        debugger
         switch (typeOfJobs) {
             case "allJobs": {
                 return jobInstance.get("jobs").then(response => {
@@ -243,21 +276,15 @@ export const profileAPI = {
     }
 }
 
-export const authApi = {
-    me() {
-        return instance.get(`auth/me`)
-    },
-    login(email, password, rememberMe = false, captcha = null) {
-        return instance.post(`auth/login`, {email, password, rememberMe, captcha})
-    },
-    logout() {
-        return instance.delete(`auth/login`)
-    }
-}
+
+
+
+
 
 export const securityAPI = {
     getCaptcha() {
         return instance.get(`security/get-captcha-url`)
     }
 }
+
 

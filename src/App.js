@@ -15,6 +15,8 @@ import Preloader from "./components/common/preloader/Preloader";
 import AdministrationContainer from "./components/Administration/AdministrationContainer";
 import SuzContainer from "./components/Suz/SuzContainer";
 import NavbarContainer from "./components/Navbar/NavbarContainer";
+import dashboard from "./Dashboard";
+import login from "./Login";
 
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'))
@@ -30,7 +32,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.props.initializeApp();
+       // this.props.initializeApp();
         window.addEventListener("unhandledrejection", this.catchAllUnhandledError);
     }
 
@@ -40,9 +42,9 @@ class App extends React.Component {
 
 
     render() {
-        if (!this.props.initialized) {
+/*        if (!this.props.initialized) {
             return <Preloader/>
-        }
+        }*/
 
         return (<div className="container-fluid bg-dark">
                 <div className="row">
@@ -51,8 +53,12 @@ class App extends React.Component {
                     </div>
                     <div className="col-sm-12 col-lg-10 content-container">
 
-                        <Route exact path="/"
-                               render={withSuspense(ProfileContainer)}/>
+                        {/*<Route exact path="/" component={login} />*/}
+                        <Route exact path="/dashboard" component={dashboard} />
+
+
+                              <Route path="/login"
+                               render={() => <Login/>}/>
 
                         <Route path="/dialogs"
                                render={withSuspense(DialogsContainer)}/>
@@ -87,8 +93,7 @@ class App extends React.Component {
                         <Route exact path="/getrequestfrom10311/:reportid?"
                         />
 
-                        <Route path="/login"
-                               render={() => <Login/>}/>
+
 
                     </div>
 
@@ -102,7 +107,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    initialized: state.app.initialized
+   // initialized: state.app.initialized
 })
 
 

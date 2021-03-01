@@ -14,7 +14,7 @@ class SuzContainer extends React.Component <>{
 
     render() {
         return <>
-            <Suz suz={this.props.suz}  />
+            <Suz suz={this.props.suz} props={this.props} />
         </>
     }
 }

@@ -31,6 +31,9 @@ export const getAllJobs = createSelector(getJobsSelector,
 
 export const getSuz = createSelector(getSuzSelector,
     (suz) =>{
+        if(suz===null)
+            return null
+        else
         return suz.filter(() => true);
     })
 

@@ -13,6 +13,7 @@ const SET_JOBSTATUS = 'SET_JOBSTATUS';
 let initialState = {
     jobid: null,
     jobs: [],
+    suz: [],
     jobdetails: [],
     pageSize: 10,
     totalUsersCount: 0,
@@ -23,7 +24,7 @@ let initialState = {
     mdlpcount: 0,
     twcount: 0,
     jobstatus: "",
-    suz: [],
+
 }
 
 

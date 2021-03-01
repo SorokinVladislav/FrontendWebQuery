@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3106e39a-1dab-446a-9b39-980cb84b0002" name="Default Changelist" comment="05.02">
+    <list default="true" id="3106e39a-1dab-446a-9b39-980cb84b0002" name="Default Changelist" comment="28.02">
+      <change afterPath="$PROJECT_DIR$/src/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Interceptors.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Administration/Administration.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Administration/Administration.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/JobDetails/JobDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/JobDetails/JobDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Mistakes/Mistakes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Mistakes/Mistakes.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbarr.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbarr.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetailsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ReportDetails/ReportDetailsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Suz/SuzContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Suz/SuzContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/withAuthRedirect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/app_reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/app_reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth_reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth_reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/jobs_reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/jobs_reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/users_selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/users_selectors.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +183,8 @@
       <workItem from="1613116464786" duration="2773000" />
       <workItem from="1613121644710" duration="987000" />
       <workItem from="1614512303454" duration="1456000" />
-      <workItem from="1614513832592" duration="6991000" />
+      <workItem from="1614513832592" duration="17606000" />
+      <workItem from="1614583839437" duration="15278000" />
     </task>
     <task id="LOCAL-00001" summary="23.01">
       <created>1611412254922</created>
@@ -283,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612513928988</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="28.02">
+      <created>1614521881063</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1614521881063</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +343,7 @@
     <MESSAGE value="02.02" />
     <MESSAGE value="04.02" />
     <MESSAGE value="05.02" />
-    <option name="LAST_COMMIT_MESSAGE" value="05.02" />
+    <MESSAGE value="28.02" />
+    <option name="LAST_COMMIT_MESSAGE" value="28.02" />
   </component>
 </project>
